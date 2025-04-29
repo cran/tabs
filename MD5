@@ -1,4 +1,4 @@
-6fab601a69704f5a5c0779992e4085a1 *DESCRIPTION
+3e8ef84fcc6f3169369c05cb4c7d5d04 *DESCRIPTION
 c34ec578f0b60e500f22514ec170c84d *NAMESPACE
 36641c4f9647da41e864ad341a7cccdf *R/aaa.R
 067328190eff615b98f7d74e22a42445 *R/add_peaks.R
@@ -6,7 +6,7 @@ c56d0e04bacacd668b9e3a469305aa58 *R/data.R
 db7ece0a408bfbfdf647ffc9e7cf7d6b *R/explore.R
 88313ec93a4c69938c3fce90cd2ea494 *R/export.R
 eac27e95ca008b7caa4afd0d3cdff950 *R/extent.R
-2061d6081e587f944b6190b17ef69ba1 *R/get_correction.R
+9e73e13d37323625da0ea2fd55b9e5dc *R/get_correction.R
 1571ba64b2a46c3fa5c3f9d2fbcdaf4e *R/get_curve.R
 23ab26cad61c0f5be0614ccf7efe5cca *R/get_data.R
 afb156fac5c5688f58ae5a3342a064b4 *R/get_rec.R
@@ -17,7 +17,7 @@ afb156fac5c5688f58ae5a3342a064b4 *R/get_rec.R
 ed125e0600bd626d8daec21a543ca680 *R/metadata.R
 32879be02b7c53f6f6202aef1f330112 *R/metrics.R
 d5434f848f311181063aeef6783092b2 *R/other.R
-ad33d926d8d9f7030bed06a53342955c *R/reconstruct.R
+8a1b4593069cae99a143496ba7652116 *R/reconstruct.R
 c431b70ed3dae1b1ef07c9d317dccbae *R/sampledata.R
 316255d069fd26fa409b3dc218ef865c *R/setup.R
 c4a8970b26992e076ccfa73f5dd3fd48 *R/tabs_classes.R
@@ -27,7 +27,7 @@ c4a8970b26992e076ccfa73f5dd3fd48 *R/tabs_classes.R
 a6e65b756dc894e6fb425e60ae5f9d9a *R/v2_scialla.R
 2d4b476eeae8da4327f1c194ed843460 *R/v2_zipping.R
 bf0c6a01dcfac42d6924258180fe4e47 *R/vv2_reconstruct_wrapper.R
-0c6c8c701971d860994d1dedae18736b *README.md
+8f67b8e521ea9e0bbfdc9b28b9d40c4a *README.md
 f61db891eb928123aba4412ca322f508 *build/partial.rdb
 7ebc42cc3f7408cff82bfdd9f7caabf3 *data/IPCC_global_mean.rda
 1cc4bbb833d421d5599aa4fd1c6546fb *data/bintanja.rda

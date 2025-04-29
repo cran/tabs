@@ -1,5 +1,5 @@
 
-# Temporal Altitudinal Biogeographic Shifts <a href="https://uva_ibed_piac.gitlab.io/uva_ibed_piac/tabs/"><img src="man/figures/logo.png" align="right" height="132" alt="tabs website" /></a>
+# Temporal Altitudinal Biogeographic Shifts <a href="https://gitlab.com/uva_ibed_piac/tabs/-/blob/master/man/figures/logo.png"><img src="man/figures/logo.png" align="right" height="132" alt="tabs website" /></a>
 
 The aim of [tabs](https://uva_ibed_piac.gitlab.io/tabs/) (Temporal Altitudinal Biogeographic Shifts) is to provide a standardized workflow to reconstruct spatial configurations of altitude-bounded biogeographic systems over time. For example, 'tabs' can model how island archipelagos expand or contract with changing sea levels or how alpine biomes shift in response to tree line movements. It provides functionality to account for various geophysical processes such as crustal deformation and other tectonic changes, allowing for a more accurate representation of biogeographic system dynamics. Additionally, tabs can project future configurations under climate change scenarios. For more information see De Groeve et al. ([2025](https://preprints.arphahub.com/article/151900/)).
 
@@ -7,7 +7,7 @@ The aim of [tabs](https://uva_ibed_piac.gitlab.io/tabs/) (Temporal Altitudinal B
 
 ## Datasets 
 
-TABS embeds state-of-the-art datasets including a topo, labeling dataset and a spatial-explicit sea level curve. In addition various other widely used curves are integrated in the R-packages as default datasets. **Topo** is a tiled version of the General Bathymetric Chart of the Oceans ([GEBCO](https://www.gebco.net/data_and_products/gridded_bathymetry_data/)). **Labs** includes two Geopackages, one including the Global Shoreline Vector ([Sayre et al. 2018](https://doi.org/10.1080/1755876X.2018.1529714)), bioclimatic and physical characterization of the worlds islands ([Weigelt et al. 2013](https://doi.org/10.1073/pnas.1306309110)), tectonic plates and orogens ([Bird et al. 2003](https://doi.org/10.1029/2001GC000252)) and an open source reference labeling points dataset for many types of features ([geoNames](https://download.geonames.org/export/dump/)). The second geopackage includes the GMBA Mountain Inventory v2 ([Snethlage et al. 2022](https://doi.org/10.1038/s41597-022-01256-y)). **Curve** includes a Global spatial-explixit past sea level curve (st_curve, 0-26 kyBP / 0.5 ky, [De Groeve et al. 2022](https://doi.org/10.1111/geb.13573)), two global mean past sea level curves (Lambeck , 0-35 kyBP / 1 ky, [Lambeck et al. 2014](https://doi.org/10.1073/pnas.1411762111); Cutler, 0-140 kyBP / 1 ky, [Cutler et al. 2003](https://doi.org/10.1016/S0012-821X(02)01107-X)), one N-America mean past sea level curve (Bintanja, 0-3000 kyBP / 1 ky, [Bintanja & van de Wal 2008](https://doi.org/10.1038/nature07158)) and four global mean future sea level IPCC scenarios (ssp1, ssp2, ssp3, ssp5, [IPCC Scenarios](https://interactive-atlas.ipcc.ch/regional-information)). 
+TABS embeds state-of-the-art datasets including a topo, labeling dataset and a spatial-explicit sea level curve. In addition various other widely used curves are integrated in the R-packages as default datasets. **Topo** is a tiled version of the General Bathymetric Chart of the Oceans ([GEBCO](https://www.gebco.net/data-products/gridded-bathymetry-data)). **Labs** includes two Geopackages, one including the Global Shoreline Vector ([Sayre et al. 2018](https://doi.org/10.1080/1755876X.2018.1529714)), bioclimatic and physical characterization of the worlds islands ([Weigelt et al. 2013](https://doi.org/10.1073/pnas.1306309110)), tectonic plates and orogens ([Bird et al. 2003](https://doi.org/10.1029/2001GC000252)) and an open source reference labeling points dataset for many types of features ([geoNames](https://download.geonames.org/export/dump/)). The second geopackage includes the GMBA Mountain Inventory v2 ([Snethlage et al. 2022](https://doi.org/10.1038/s41597-022-01256-y)). **Curve** includes a Global spatial-explixit past sea level curve (st_curve, 0-26 kyBP / 0.5 ky, [De Groeve et al. 2022](https://doi.org/10.1111/geb.13573)), two global mean past sea level curves (Lambeck , 0-35 kyBP / 1 ky, [Lambeck et al. 2014](https://doi.org/10.1073/pnas.1411762111); Cutler, 0-140 kyBP / 1 ky, [Cutler et al. 2003](https://doi.org/10.1016/S0012-821X(02)01107-X)), one N-America mean past sea level curve (Bintanja, 0-3000 kyBP / 1 ky, [Bintanja & van de Wal 2008](https://doi.org/10.1038/nature07158)) and four global mean future sea level IPCC scenarios (ssp1, ssp2, ssp3, ssp5, [IPCC Scenarios](https://interactive-atlas.ipcc.ch/regional-information)). 
 
 The three main processed datasets (topo, labs, st_curve) are published on Figshare ([Table 1](#TABLE1)) and need to be downloaded which can be conveniently done with the [setup](#download-and-installation-global-datasets) function. 
 
@@ -139,6 +139,7 @@ data(funza)
 
 The main function of tabs is `r reconstruct()` which reconstructs the changes in area and shape configurations over time based on (1) a selected region, (2) a sea-level curve, (3) a topographic/bathymetric model and (4) correction grid. Other important functions are `r export()` and  `r explore()` to respectively save and visualize outputs of reconstruct and `r import()` to import the reconstruction back in R. See below a basic example of the usage of the functions using the in-built dataset of the Sporades archipelago. For detailed examples, check the [vignettes](https://uva_ibed_piac.gitlab.io/tabs/articles/00-tabs-get-started.html) and the function help, ?reconstruct(). 
 
+
 ```r
 # load data samples
 data <- sporades() 
@@ -153,7 +154,7 @@ sporades <- reconstruct(topo=topo,
                         region=labs,
                         curve=curve,
                         correction=correction,
-                        names='name')
+                        reclabs='name')
 # export
 dir <- tempdir()
 export(sporades, paste0(dir,'/sporades')) # directory tree
@@ -170,8 +171,8 @@ sporades <- reconstruct(topo=topo,
                         )
 
 # explore
-explore(paleogeography) # present
-explore(paleogeography,timelapse=0) # timelapse
+explore(sporades) # present
+explore(sporades,timelapse=0) # timelapse
 explore('sporades.qs2')
 
 # import

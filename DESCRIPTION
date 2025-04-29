@@ -1,6 +1,6 @@
 Package: tabs
 Title: Temporal Altitudinal Biogeographic Shifts
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
      person(given = "Johannes",
            family = "De Groeve",
@@ -40,7 +40,7 @@ Language: en-US
 LazyData: true
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-04-02 14:34:03 UTC; jedgroev
+Packaged: 2025-04-29 16:55:24 UTC; jedgroev
 Author: Johannes De Groeve [aut, cre] (<https://orcid.org/0000-0002-1274-3237>),
   Sietze Norder [aut] (<https://orcid.org/0000-0003-4692-4543>),
   Eline Sterre Rentier [aut] (<https://orcid.org/0000-0001-6234-1300>),
@@ -48,4 +48,4 @@ Author: Johannes De Groeve [aut, cre] (<https://orcid.org/0000-0002-1274-3237>),
   Kenneth Rijsdijk [ctb] (<https://orcid.org/0000-0002-0943-2577>)
 Maintainer: Johannes De Groeve <j.degroeve@uva.nl>
 Repository: CRAN
-Date/Publication: 2025-04-03 15:30:02 UTC
+Date/Publication: 2025-04-29 17:30:02 UTC

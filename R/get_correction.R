@@ -47,7 +47,7 @@ get_correction <- function(correction=NULL,
     attr(tectonic_uplift_m,'source') <- 'no correction'
     if(as.numeric(verbose) > 1){message('no correction grid specified')}
     } else {
-    if( length(names(curve)) != length(names(correction))){ # only run if correction is not yet formatted to curve 
+    if( length(names(curve)) != length(names(correction)) ){ # only run if correction is not yet formatted to curve 
       if(class(correction)[1] %in% c('SpatRaster','numeric')){
         uplift <- correction
         #attr(uplift)
@@ -139,6 +139,15 @@ get_correction <- function(correction=NULL,
       if(as.numeric(verbose) > 1){message('correction already calculated')}
       tectonic_uplift_m <- correction
       
+      if(class(tectonic_uplift_m)[1] %in% c('SpatRaster')){
+        if(is.null(attr(tectonic_uplift_m,'source'))){
+          attr(tectonic_uplift_m,'source') <- 'custom correction raster'
+        } 
+      } else {
+        if(is.null(attr(tectonic_uplift_m,'source'))){
+          attr(tectonic_uplift_m,'source') <- 'custom correction vector'
+        }
+      }
       #terra::ext(tectonic_uplift_m) <- terra::ext(topo)
     }
       
@@ -160,5 +169,21 @@ get_correction <- function(correction=NULL,
   #   attr(sea_level_m,'source') <- curve_data$curve_name[1]
   # }
   
+  # just in case if still NULL
+  if(class(tectonic_uplift_m)[1] %in% c('SpatRaster')){
+    if(is.null(attr(tectonic_uplift_m,'source'))){
+      attr(tectonic_uplift_m,'source') <- 'custom correction raster'
+    } 
+  } else {
+    if(is.null(attr(tectonic_uplift_m,'source'))){
+    attr(tectonic_uplift_m,'source') <- 'custom correction vector'
+    }
+  }
+  
   return(tectonic_uplift_m)
 }
+
+
+
+
+

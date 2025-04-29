@@ -281,9 +281,10 @@ reconstruct <- function(x=NULL,
   #labs <- paste_attributes(labs_attr)
   #### 6. TABS ####
   names(curves) <- names(rec$recrast)
-  if(!attr(corrections,'source') == 'no correction'){
+  if(!attr(corrections,'source') == 'no correction'){ #length(correction)==1 & as.vector(correction[1] == 0)
     names(corrections) <- names(rec$recrast)
   }
+  
   
   data <- create_tabs_class(list(recvect=recvect,
                recrast=rec$recrast,# + 1 
